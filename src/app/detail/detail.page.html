@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar *ngIf="feed">
+    <ion-title>{{feed.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" padding>
+  <ion-card *ngIf="feed">
+    <img src="{{feed.url}}">
+    <ion-card-header>
+      <ion-card-subtitle>{{source}}</ion-card-subtitle>
+      <ion-card-title>{{feed.title | titlecase}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content [innerHTML]="feed.description">
+    </ion-card-content>
+  </ion-card>
+</ion-content>

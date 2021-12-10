@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ current_feed.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ current_feed.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-list>
+      <ion-item *ngFor="let feed of feeds">
+        <ion-label>
+          <h2>{{feed.title}}</h2>
+        </ion-label>
+        <ion-button [routerLink]="['/detail', current_feed.source, feed.id]" routerDirection="forward">Read more</ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
